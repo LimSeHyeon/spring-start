@@ -3,10 +3,7 @@ package com.example.summer.trip;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class TripController {
@@ -23,9 +20,18 @@ public class TripController {
         return tripService.getProduct();
     }
 
-    @RequestMapping(value="/products/{id}", method = RequestMethod.GET)
-    public String printID(@PathVariable(value="id") int id) {
-        return id + "";
+//    @RequestMapping(value="/products/{id}", method = RequestMethod.GET)
+//    public String printID(@PathVariable(value="id") int id) {
+//        return id + "";
+//    }
+    /*
+    쿼리 파라미터(스트링)로 숙소명을 받아서
+    repository table에 저장한 뒤,
+    "{숙소명} 상품 생성 성공!"
+     */
+    @RequestMapping(value="/products", method = RequestMethod.GET)
+    public String postProduct(@RequestParam(value="name") String name) {
+        return tripService.postProduct(name);
     }
 }
 

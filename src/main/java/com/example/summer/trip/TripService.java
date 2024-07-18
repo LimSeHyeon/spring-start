@@ -15,4 +15,10 @@ public class TripService {
     public String getProduct() {
         return tripRepository.getProduct();
     }
+
+    public String postProduct(String name) {
+        boolean result = tripRepository.postProduct(name);
+        if(result) return name + " 상품 생성 성공 !";
+        else return "상품 생성 실패";
+    }
 }
