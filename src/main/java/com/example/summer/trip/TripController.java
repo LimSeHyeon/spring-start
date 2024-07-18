@@ -1,8 +1,6 @@
 package com.example.summer.trip;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -30,8 +28,8 @@ public class TripController {
     "{숙소명} 상품 생성 성공!"
      */
     @RequestMapping(value="/products", method = RequestMethod.GET)
-    public String postProduct(@RequestParam(value="name") String name) {
-        return tripService.postProduct(name);
+    public String addProduct(@RequestParam(value="name") String name) {
+        return tripService.addProduct(name);
     }
 }
 

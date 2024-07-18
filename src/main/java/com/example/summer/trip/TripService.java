@@ -16,8 +16,8 @@ public class TripService {
         return tripRepository.getProduct();
     }
 
-    public String postProduct(String name) {
-        boolean result = tripRepository.postProduct(name);
+    public String addProduct(String name) {
+        boolean result = tripRepository.saveProduct(name);
         if(result) return name + " 상품 생성 성공 !";
         else return "상품 생성 실패";
     }

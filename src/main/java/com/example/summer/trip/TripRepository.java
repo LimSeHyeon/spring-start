@@ -17,7 +17,7 @@ public class TripRepository {
         return "파라스파라 서울";
     }
 
-    public boolean postProduct(String name) {
+    public boolean saveProduct(String name) {
         try {
             trip_table.put(trip_table.size()+1, name);
             return true;
