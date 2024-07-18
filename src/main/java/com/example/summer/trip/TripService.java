@@ -2,6 +2,7 @@ package com.example.summer.trip;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 @Component
 public class TripService {
@@ -12,12 +13,11 @@ public class TripService {
         this.tripRepository = tripRepository;
     }
 
-    public String getProduct(int id) {
+    public Hotel getProduct(int id) {
         return tripRepository.findProduct(id);
     }
 
-    public String addProduct(String name) {
-        String result = tripRepository.saveProduct(name);
-        return result + " 상품 생성 성공 !";
+    public Hotel addProduct(Hotel hotel) {
+        return tripRepository.saveProduct(hotel);
     }
 }
