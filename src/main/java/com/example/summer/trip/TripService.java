@@ -4,7 +4,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TripService {
+    TripRepository tripRepository;
+
+    TripService(TripRepository tripRepository) {
+        this.tripRepository = tripRepository;
+    }
+
     public String getProduct() {
-        return "파라스파라 서울";
+        return tripRepository.getProduct();
     }
 }
