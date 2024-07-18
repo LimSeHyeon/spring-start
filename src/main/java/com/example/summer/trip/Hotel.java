@@ -13,6 +13,7 @@ public class Hotel {
         this.lowPrice = lowPrice;
     }
 
+
     public String getName() {
         return name;
     }
