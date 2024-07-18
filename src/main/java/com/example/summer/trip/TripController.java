@@ -9,7 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TripController {
-    TripService tripService = new TripService();
+//    TripService tripService = new TripService();
+
+    TripService tripService;
+    TripController() {
+        tripService = new TripService();
+    }
 
     @RequestMapping(value="/test", method = RequestMethod.GET)
     public String test() {
