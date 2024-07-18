@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TripController {
+    TripService tripService = new TripService();
+
     @RequestMapping(value="/test", method = RequestMethod.GET)
     public String test() {
         return "sehseh";
@@ -19,7 +21,8 @@ public class TripController {
     */
     @RequestMapping(value="/product", method = RequestMethod.GET)
     public String test2() {
-        return "파라스파라 서울";
+        String result = tripService.getProduct();
+        return result;
     }
 
     /*
