@@ -12,16 +12,15 @@ public class TripController {
         this.tripService = tripService;
     }
 
+    /*
+    path variable로 idx값을 받아서
+    repository에 매핑되어 있는 value(숙소명)dmf 출력해주세요 !
+     */
 
-    @RequestMapping(value="/product", method = RequestMethod.GET)
-    public String test2() {
-        return tripService.getProduct();
+    @RequestMapping(value="/products/{id}", method = RequestMethod.GET)
+    public String getProduct(@PathVariable(value="id") int id) {
+        return tripService.getProduct(id);
     }
-
-//    @RequestMapping(value="/products/{id}", method = RequestMethod.GET)
-//    public String printID(@PathVariable(value="id") int id) {
-//        return id + "";
-//    }
     /*
     쿼리 파라미터(스트링)로 숙소명을 받아서
     repository table에 저장한 뒤,

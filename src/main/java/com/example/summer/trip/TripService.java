@@ -12,13 +12,12 @@ public class TripService {
         this.tripRepository = tripRepository;
     }
 
-    public String getProduct() {
-        return tripRepository.getProduct();
+    public String getProduct(int id) {
+        return tripRepository.findProduct(id);
     }
 
     public String addProduct(String name) {
-        boolean result = tripRepository.saveProduct(name);
-        if(result) return name + " 상품 생성 성공 !";
-        else return "상품 생성 실패";
+        String result = tripRepository.saveProduct(name);
+        return result + " 상품 생성 성공 !";
     }
 }

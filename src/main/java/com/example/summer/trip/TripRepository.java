@@ -7,23 +7,21 @@ import java.util.HashMap;
 @Component
 public class TripRepository {
 
-    HashMap<Integer, String> trip_table = new HashMap<>();
+    HashMap<Integer, String> tripTable = new HashMap<>();
+    int idx = 0;
 
     TripRepository() {
 
     }
 
-    public String getProduct() {
-        return "파라스파라 서울";
+    public String findProduct(int id) {
+        System.out.println(tripTable.get(id));
+        return tripTable.get(id);
     }
 
-    public boolean saveProduct(String name) {
-        try {
-            trip_table.put(trip_table.size()+1, name);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+    public String saveProduct(String name) {
+        tripTable.put(idx++, name);
+        return tripTable.get(idx-1);
 
     }
 }
