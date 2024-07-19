@@ -7,7 +7,7 @@ import java.util.HashMap;
 @Component
 public class AccommodationRepository {
 
-    HashMap<Integer, Accommodation> tripTable = new HashMap<>();
+    HashMap<Integer, Accommodation> bbashaTable = new HashMap<>();
     int idx = 0;
 
     AccommodationRepository() {
@@ -15,13 +15,13 @@ public class AccommodationRepository {
     }
 
     public Accommodation findProduct(int id) {
-        System.out.println(tripTable.get(id));
-        return tripTable.get(id);
+        System.out.println(bbashaTable.get(id));
+        return bbashaTable.get(id);
     }
 
     public Accommodation saveProduct(Accommodation accommodation) {
-        tripTable.put(idx++, accommodation);
-        return tripTable.get(idx-1);
+        bbashaTable.put(idx++, accommodation);
+        return bbashaTable.get(idx-1);
 
     }
 }
