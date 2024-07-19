@@ -1,9 +1,12 @@
 package com.example.summer.accommodation;
 
+import java.util.HashMap;
+
 public class Accommodation {
     private int id;
     private String name;
     private int lowPrice;
+    private HashMap<Integer, Room> rooms;
 
     Accommodation(String name, int lowPrice) {
         this.name = name;
