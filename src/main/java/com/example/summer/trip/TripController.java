@@ -12,20 +12,12 @@ public class TripController {
         this.tripService = tripService;
     }
 
-    /*
-    path variable로 idx값을 받아서
-    repository에 매핑되어 있는 value(숙소명)을 출력해주세요 !
-     */
 
     @RequestMapping(value="/products/{id}", method = RequestMethod.GET)
     public Hotel getProduct(@PathVariable(value="id") int id) {
         return tripService.getProduct(id);
     }
-    /*
-    쿼리 파라미터(스트링)로 숙소명을 받아서
-    repository table에 저장한 뒤,
-    "{숙소명} 상품 생성 성공!"
-     */
+
     @RequestMapping(value="/products", method = RequestMethod.POST)
     public Hotel addProduct(@RequestBody Hotel hotel) {
         return tripService.addProduct(hotel);
