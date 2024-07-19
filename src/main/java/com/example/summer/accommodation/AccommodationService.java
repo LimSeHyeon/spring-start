@@ -1,4 +1,4 @@
-package com.example.summer.accomodation;
+package com.example.summer.accommodation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
