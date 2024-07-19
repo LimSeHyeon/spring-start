@@ -1,5 +1,10 @@
 package com.example.summer.accommodation;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Accommodation {
     private String name;
     private int lowPrice;
@@ -8,23 +13,5 @@ public class Accommodation {
         this.name = name;
         this.lowPrice = lowPrice;
     }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public int getLowPrice() {
-        return lowPrice;
-    }
-
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public void setLowPrice(int lowPrice) {
-//        this.lowPrice = lowPrice;
-//    }
-    //    private ArrayList<Room> rooms;
 
 }
