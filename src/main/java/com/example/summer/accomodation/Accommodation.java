@@ -1,14 +1,10 @@
-package com.example.summer.trip;
+package com.example.summer.accomodation;
 
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-
-public class Hotel {
+public class Accommodation {
     private String name;
     private int lowPrice;
 
-    Hotel(String name, int lowPrice) {
+    Accommodation(String name, int lowPrice) {
         this.name = name;
         this.lowPrice = lowPrice;
     }

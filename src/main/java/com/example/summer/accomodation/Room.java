@@ -1,4 +1,4 @@
-package com.example.summer.trip;
+package com.example.summer.accomodation;
 
 public class Room {
     private String type;
