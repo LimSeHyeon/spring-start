@@ -22,6 +22,5 @@ public class AccommodationRepository {
     public Accommodation saveProduct(Accommodation accommodation) {
         bbashaTable.put(idx++, accommodation);
         return bbashaTable.get(idx-1);
-
     }
 }

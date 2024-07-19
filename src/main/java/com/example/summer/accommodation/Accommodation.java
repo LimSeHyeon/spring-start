@@ -1,6 +1,7 @@
 package com.example.summer.accommodation;
 
 public class Accommodation {
+    private int id;
     private String name;
     private int lowPrice;
 
@@ -23,5 +24,13 @@ public class Accommodation {
 
     public void setLowPrice(int lowPrice) {
         this.lowPrice = lowPrice;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
