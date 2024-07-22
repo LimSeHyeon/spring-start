@@ -15,7 +15,8 @@ public class UserService {
         return userRepository.saveUser(user);
     }
 
-    public User login(User user) {
-        return userRepository.getUser(user);
+    public LoginUser login(User user) {
+        User checkedUser = userRepository.getUser(user);
+        return new LoginUser(checkedUser.getName(), checkedUser.getId());
     }
 }

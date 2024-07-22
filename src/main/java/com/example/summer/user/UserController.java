@@ -27,8 +27,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/users/login", method = RequestMethod.POST)
-    public ResponseEntity<User> loginUser(@RequestBody User user) {
-        User loginUser = userService.login(user);
+    public ResponseEntity<LoginUser> loginUser(@RequestBody User user) {
+        LoginUser loginUser = userService.login(user);
         return new ResponseEntity<>(loginUser, HttpStatus.CREATED);
     }
 }
