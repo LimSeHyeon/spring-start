@@ -19,4 +19,8 @@ public class AccommodationService {
     public Accommodation addAccomodation(Accommodation accommodation) {
         return accommodationRepository.saveProduct(accommodation);
     }
+
+//    public Room addRoom(Room room) {
+//
+//    }
 }

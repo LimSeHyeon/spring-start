@@ -27,8 +27,12 @@ public class AccommodationController {
         return new ResponseEntity<>(savedAccommodation, HttpStatus.CREATED);
     }
 
-    //숙소 여러개 등록
-//    @RequestMapping(value = "/products", method = RequestMethod.POST)
+    //방 한 개 등록
+//    @RequestMapping(value = "/rooms", method = RequestMethod.POST)
+//    public ResponseEntity<Room> addRoom(@RequestBody Room room) {
+//        System.out.println(room.getPrice()+room.getType());
+//        return new ResponseEntity<>()
+//    }
 }
 
 
