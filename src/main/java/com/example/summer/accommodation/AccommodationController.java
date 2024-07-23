@@ -5,6 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class AccommodationController {
 
@@ -20,8 +23,15 @@ public class AccommodationController {
         return accommodationService.getAccomodationName(id);
     }
 
+    // 전체 숙소 조회
+    @RequestMapping(value="/accommodations", method = RequestMethod.GET)
+    public ResponseEntity<List<Accommodation>> getAllAccommodations() {
+        List<Accommodation> accommodations = accommodationService.getAll();
+        return new ResponseEntity<>(accommodations, HttpStatus.OK);
+    }
+
     //숙소 1개 등록
-    @RequestMapping(value="/acommodations", method = RequestMethod.POST)
+    @RequestMapping(value="/accommodations", method = RequestMethod.POST)
     public ResponseEntity<Accommodation> addAccomodation(@RequestBody Accommodation accommodation) {
         Accommodation savedAccommodation = accommodationService.addAccomodation(accommodation);
         return new ResponseEntity<>(savedAccommodation, HttpStatus.CREATED);
