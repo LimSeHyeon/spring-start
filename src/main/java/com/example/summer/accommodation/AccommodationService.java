@@ -31,11 +31,15 @@ public class AccommodationService {
     public Accommodation addRooms(Room[] rooms) {
         int hotelId = rooms[0].getAccommodationId();
         Accommodation updatedAccommodation = accommodationRepository.findProduct(hotelId);
-        ArrayList<Room> tmp;
-        for(Room : rooms) {
+        ArrayList<Room> existRooms = updatedAccommodation.getRooms();
 
+        // 방 목록이 null이면 새 리스트로 초기화
+        if (existRooms == null) {
+            existRooms = new ArrayList<>();
+            updatedAccommodation.setRooms(existRooms);
         }
-        updatedAccommodation.getRooms().addAll(Arrays.asList(rooms));
+        existRooms.addAll(Arrays.asList(rooms));
+        accommodationRepository.saveProduct(updatedAccommodation);
         return updatedAccommodation;
     }
 }
