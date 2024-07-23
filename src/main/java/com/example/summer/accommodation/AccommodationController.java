@@ -15,13 +15,13 @@ public class AccommodationController {
     }
 
 
-    @RequestMapping(value="/products/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/acommodations/{id}", method = RequestMethod.GET)
     public Accommodation getAccomodationName(@PathVariable(value="id") int id) {
         return accommodationService.getAccomodationName(id);
     }
 
     //숙소 1개 등록
-    @RequestMapping(value="/products", method = RequestMethod.POST)
+    @RequestMapping(value="/acommodations", method = RequestMethod.POST)
     public ResponseEntity<Accommodation> addAccomodation(@RequestBody Accommodation accommodation) {
         Accommodation savedAccommodation = accommodationService.addAccomodation(accommodation);
         return new ResponseEntity<>(savedAccommodation, HttpStatus.CREATED);
