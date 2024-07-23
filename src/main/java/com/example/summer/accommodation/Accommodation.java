@@ -1,12 +1,12 @@
 package com.example.summer.accommodation;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Accommodation {
     private int id;
     private String name;
     private int lowPrice;
-    private HashMap<Integer, Room> rooms;
+    private ArrayList<Room> rooms;
 
     Accommodation(String name, int lowPrice) {
         this.name = name;
@@ -35,5 +35,13 @@ public class Accommodation {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public ArrayList<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(ArrayList<Room> rooms) {
+        this.rooms = rooms;
     }
 }

@@ -37,12 +37,12 @@ public class AccommodationController {
         return new ResponseEntity<>(savedAccommodation, HttpStatus.CREATED);
     }
 
-    //방 한 개 등록
-//    @RequestMapping(value = "/rooms", method = RequestMethod.POST)
-//    public ResponseEntity<Room> addRoom(@RequestBody Room room) {
-//        System.out.println(room.getPrice()+room.getType());
-//        return new ResponseEntity<>()
-//    }
+    //방 여러 개 등록
+    @RequestMapping(value = "/rooms", method = RequestMethod.POST)
+    public ResponseEntity<Accommodation> addRoom(@RequestBody Room[] rooms) {
+        Accommodation updatedAccommodation = accommodationService.addRooms(rooms);
+        return new ResponseEntity<>(updatedAccommodation, HttpStatus.CREATED);
+    }
 }
 
 

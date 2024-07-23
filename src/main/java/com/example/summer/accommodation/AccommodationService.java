@@ -3,6 +3,8 @@ package com.example.summer.accommodation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -26,7 +28,14 @@ public class AccommodationService {
         return accommodationRepository.saveProduct(accommodation);
     }
 
-//    public Room addRoom(Room room) {
-//
-//    }
+    public Accommodation addRooms(Room[] rooms) {
+        int hotelId = rooms[0].getAccommodationId();
+        Accommodation updatedAccommodation = accommodationRepository.findProduct(hotelId);
+        ArrayList<Room> tmp;
+        for(Room : rooms) {
+
+        }
+        updatedAccommodation.getRooms().addAll(Arrays.asList(rooms));
+        return updatedAccommodation;
+    }
 }
