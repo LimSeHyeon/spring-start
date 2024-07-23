@@ -17,8 +17,9 @@ public class AccommodationRepository {
     }
 
     public Accommodation findProduct(int id) {
-        if(bbashaTable.get(id) == null)
-            return bbashaTable.get(id);
+        Accommodation foundAccommodation = bbashaTable.get(id);
+        if(foundAccommodation != null)
+            return foundAccommodation;
         else
             return null;
     }
