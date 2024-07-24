@@ -16,12 +16,15 @@ public class AccommodationRepository {
 
     }
 
-    public Accommodation findProduct(int id) {
+    public String getAccommodation(int id) {
         Accommodation foundAccommodation = bbashaTable.get(id);
-        if(foundAccommodation != null)
-            return foundAccommodation;
-        else
-            return null;
+        try {
+            return foundAccommodation.getName();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            return "exception";
+        }
     }
 
     public List<Accommodation> findAll() {
