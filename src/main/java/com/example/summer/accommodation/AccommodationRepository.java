@@ -1,5 +1,6 @@
 package com.example.summer.accommodation;
 
+import com.example.summer.exception.AccommodationNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class AccommodationRepository {
             if (foundAccommodation != null)
                 return bbashaTable.get(id);
             else
-                throw new NoSuchElementException("no room!");
+                throw new AccommodationNotFoundException("no room!");
 
     }
 

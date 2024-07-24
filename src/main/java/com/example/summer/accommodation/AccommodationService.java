@@ -1,5 +1,6 @@
 package com.example.summer.accommodation;
 
+import com.example.summer.exception.AccommodationNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,8 +25,8 @@ public class AccommodationService {
     public Accommodation getAccomodation(int id) throws NoSuchElementException {
         try {
             return accommodationRepository.getAccommodation(id);
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
+        } catch (AccommodationNotFoundException e) {
+            System.out.println(e.getMessage());;
             return new NullAccommodation();
         }
     }
