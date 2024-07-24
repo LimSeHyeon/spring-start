@@ -20,8 +20,8 @@ public class AccommodationService {
         return accommodationRepository.findAll();
     }
 
-    public Accommodation getAccomodationName(int id) {
-        return accommodationRepository.findProduct(id);
+    public Accommodation getAccomodation(int id) {
+        return accommodationRepository.getAccommodation(id);
     }
 
     public Accommodation addAccomodation(Accommodation accommodation) {
@@ -30,7 +30,7 @@ public class AccommodationService {
 
     public Accommodation addRooms(Room[] rooms) {
         int hotelId = rooms[0].getAccommodationId();
-        Accommodation updatedAccommodation = accommodationRepository.findProduct(hotelId);
+        Accommodation updatedAccommodation = accommodationRepository.getAccommodation(hotelId);
         ArrayList<Room> existRooms = updatedAccommodation.getRooms();
 
         // 방 목록이 null이면 새 리스트로 초기화

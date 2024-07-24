@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,9 +17,9 @@ public class AccommodationController {
     }
 
 
-    @RequestMapping(value="/acommodations/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/accommodations/{id}", method = RequestMethod.GET)
     public Accommodation getAccomodationName(@PathVariable(value="id") int id) {
-        return accommodationService.getAccomodationName(id);
+        return accommodationService.getAccomodation(id);
     }
 
     // 전체 숙소 조회

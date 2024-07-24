@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Component
 public class AccommodationRepository {
@@ -16,15 +17,12 @@ public class AccommodationRepository {
 
     }
 
-    public String getAccommodation(int id) {
+    public Accommodation getAccommodation(int id) {
         Accommodation foundAccommodation = bbashaTable.get(id);
-        try {
-            return foundAccommodation.getName();
-        }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-            return "exception";
-        }
+        if(foundAccommodation != null)
+            return bbashaTable.get(id);
+        else
+            throw new NoSuchElementException("no room!");
     }
 
     public List<Accommodation> findAll() {
