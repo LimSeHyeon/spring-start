@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 public class AccommodationController {
@@ -19,7 +20,12 @@ public class AccommodationController {
 
     @RequestMapping(value="/accommodations/{id}", method = RequestMethod.GET)
     public Accommodation getAccomodationName(@PathVariable(value="id") int id) {
-        return accommodationService.getAccomodation(id);
+        try {
+            return accommodationService.getAccomodation(id);
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            return new NullAccommodation();
+        }
     }
 
     // 전체 숙소 조회

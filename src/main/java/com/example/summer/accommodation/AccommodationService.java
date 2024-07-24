@@ -21,13 +21,9 @@ public class AccommodationService {
         return accommodationRepository.findAll();
     }
 
-    public Accommodation getAccomodation(int id) {
-        try {
-            return accommodationRepository.getAccommodation(id);
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            return new NullAccommodation();
-        }
+    public Accommodation getAccomodation(int id) throws NoSuchElementException {
+        return accommodationRepository.getAccommodation(id);
+
     }
 
     public Accommodation addAccomodation(Accommodation accommodation) {
