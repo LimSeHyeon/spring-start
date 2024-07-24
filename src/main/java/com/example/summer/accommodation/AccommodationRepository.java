@@ -26,7 +26,7 @@ public class AccommodationRepository {
             else
                 throw new NoSuchElementException("no room!");
         } catch (NoSuchElementException e) {
-            return new Accommodation();
+            return new NullAccommodation();
         }
     }
 

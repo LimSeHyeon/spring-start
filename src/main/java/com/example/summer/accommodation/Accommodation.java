@@ -47,3 +47,10 @@ public class Accommodation {
         this.rooms = rooms;
     }
 }
+
+class NullAccommodation extends Accommodation {
+    @Override
+    public String getName() {
+        return "null입니다.";
+    }
+}
