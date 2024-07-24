@@ -17,17 +17,13 @@ public class AccommodationRepository {
 
     }
 
-    public Accommodation getAccommodation(int id) {
+    public Accommodation getAccommodation(int id) throws NoSuchElementException {
         Accommodation foundAccommodation = bbashaTable.get(id);
-
-        try {
             if (foundAccommodation != null)
                 return bbashaTable.get(id);
             else
                 throw new NoSuchElementException("no room!");
-        } catch (NoSuchElementException e) {
-            return new NullAccommodation();
-        }
+
     }
 
     public List<Accommodation> findAll() {

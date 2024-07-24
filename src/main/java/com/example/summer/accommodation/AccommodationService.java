@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Component
 public class AccommodationService {
@@ -21,7 +22,12 @@ public class AccommodationService {
     }
 
     public Accommodation getAccomodation(int id) {
-        return accommodationRepository.getAccommodation(id);
+        try {
+            return accommodationRepository.getAccommodation(id);
+        } catch (
+            NoSuchElementException e) {
+            return new NullAccommodation();
+        }
     }
 
     public Accommodation addAccomodation(Accommodation accommodation) {
