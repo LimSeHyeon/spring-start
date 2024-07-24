@@ -19,10 +19,15 @@ public class AccommodationRepository {
 
     public Accommodation getAccommodation(int id) {
         Accommodation foundAccommodation = bbashaTable.get(id);
-        if(foundAccommodation != null)
-            return bbashaTable.get(id);
-        else
-            throw new NoSuchElementException("no room!");
+
+        try {
+            if (foundAccommodation != null)
+                return bbashaTable.get(id);
+            else
+                throw new NoSuchElementException("no room!");
+        } catch (NoSuchElementException e) {
+            return new Accommodation();
+        }
     }
 
     public List<Accommodation> findAll() {

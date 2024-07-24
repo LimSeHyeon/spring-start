@@ -13,6 +13,8 @@ public class Accommodation {
         this.lowPrice = lowPrice;
     }
 
+    Accommodation() {}
+
     public String getName() {
         return name;
     }
