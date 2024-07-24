@@ -20,12 +20,7 @@ public class AccommodationController {
 
     @RequestMapping(value="/accommodations/{id}", method = RequestMethod.GET)
     public Accommodation getAccomodationName(@PathVariable(value="id") int id) {
-        try {
-            return accommodationService.getAccomodation(id);
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            return new NullAccommodation();
-        }
+        return accommodationService.getAccomodation(id);
     }
 
     // 전체 숙소 조회

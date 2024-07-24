@@ -22,8 +22,12 @@ public class AccommodationService {
     }
 
     public Accommodation getAccomodation(int id) throws NoSuchElementException {
-        return accommodationRepository.getAccommodation(id);
-
+        try {
+            return accommodationRepository.getAccommodation(id);
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            return new NullAccommodation();
+        }
     }
 
     public Accommodation addAccomodation(Accommodation accommodation) {
