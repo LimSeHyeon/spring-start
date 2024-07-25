@@ -23,12 +23,7 @@ public class AccommodationService {
     }
 
     public Accommodation getAccomodation(int id) throws NoSuchElementException {
-        try {
-            return accommodationRepository.getAccommodation(id);
-        } catch (AccommodationNotFoundException e) {
-            System.out.println(e.getMessage());;
-            return new NullAccommodation();
-        }
+        return accommodationRepository.getAccommodation(id);
     }
 
     public Accommodation addAccomodation(Accommodation accommodation) {
