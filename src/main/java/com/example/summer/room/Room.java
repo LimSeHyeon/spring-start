@@ -1,4 +1,4 @@
-package com.example.summer.accommodation;
+package com.example.summer.room;
 
 public class Room {
     private int accommodationId;

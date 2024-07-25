@@ -1,5 +1,7 @@
 package com.example.summer.accommodation;
 
+import com.example.summer.room.Room;
+
 import java.util.ArrayList;
 
 public class Accommodation {
