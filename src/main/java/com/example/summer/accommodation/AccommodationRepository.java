@@ -1,8 +1,12 @@
 package com.example.summer.accommodation;
 
 import com.example.summer.exception.AccommodationNotFoundException;
+import jakarta.persistence.EntityManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Component;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,11 +15,19 @@ import java.util.NoSuchElementException;
 @Component
 public class AccommodationRepository {
 
+    @Autowired
+    DataSource dataSource;
+
     HashMap<Integer, Accommodation> bbashaTable = new HashMap<>();
     int idx = 0;
+    EntityManager entityManager;
 
-    AccommodationRepository() {
+    AccommodationRepository(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
+    public void makeConnection() {
+        System.out.println(DataSourceUtils.getConnection(dataSource));
     }
 
     public Accommodation getAccommodation(int id) throws NoSuchElementException {
