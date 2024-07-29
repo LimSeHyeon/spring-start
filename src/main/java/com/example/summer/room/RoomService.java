@@ -8,20 +8,20 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 public class RoomService {
 
-    private RoomJPARepository roomJPARepository;
+    private RoomRepository roomRepository;
 
     @Autowired
     RoomService(RoomJPARepository roomJPARepository) {
-        this.roomJPARepository = roomJPARepository;
+        this.roomRepository = roomJPARepository;
     }
 
-    @Transactional
-    public void saveRoom(RoomRegisterReq roomRegisterReq) {
-        roomJPARepository.saveRoom(roomRegisterReq.toEntity());
-    }
-
-    @Transactional
-    public Room getRoom(int id) {
-        return roomJPARepository.findRoom(id);
-    }
+//    @Transactional
+//    public void saveRoom(RoomRegisterReq roomRegisterReq) {
+//        roomRepository.save(roomRegisterReq.toEntity());
+//    }
+//
+//    @Transactional
+//    public Room getRoom(int id) {
+//        return roomRepository.findRoom(id);
+//    }
 }
