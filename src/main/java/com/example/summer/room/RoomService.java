@@ -19,7 +19,7 @@ public class RoomService {
         roomRepository.saveRoom(room);
     }
 
-
+    @Transactional
     public Room getRoom(int id) {
         return roomRepository.findRoom(id);
     }

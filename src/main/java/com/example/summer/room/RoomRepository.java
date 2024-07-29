@@ -28,8 +28,7 @@ public class RoomRepository {
 
 
     public Room findRoom(int id) {
-        Room room = roomTable.get(id);
-        return room;
+        return entityManager.find(Room.class, id);
     }
 
 
