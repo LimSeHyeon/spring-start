@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 
 @Component
-public class RoomJPARepository {
+public class RoomJPARepository implements RoomRepository {
 
 
     HashMap<Integer, Room> roomTable = new HashMap<>();
@@ -30,4 +30,8 @@ public class RoomJPARepository {
     }
 
 
+    @Override
+    public Room save() {
+        return null;
+    }
 }
