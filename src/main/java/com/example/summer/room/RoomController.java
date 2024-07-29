@@ -1,5 +1,6 @@
 package com.example.summer.room;
 
+import com.example.summer.room.dto.RoomRegisterReq;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class RoomController {
     }
 
     @PostMapping("/rooms")
-    public void saveRoom(@RequestBody Room room) {
-        roomService.saveRoom(room);
+    public void saveRoom(@RequestBody RoomRegisterReq roomRegisterReq) {
+        roomService.saveRoom(roomRegisterReq);
     }
 }

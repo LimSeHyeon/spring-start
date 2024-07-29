@@ -1,5 +1,6 @@
 package com.example.summer.room;
 
+import com.example.summer.room.dto.RoomRegisterReq;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +16,8 @@ public class RoomService {
     }
 
     @Transactional
-    public void saveRoom(Room room) {
+    public void saveRoom(RoomRegisterReq roomRegisterReq) {
+        Room room = new Room(roomRegisterReq.getType(), roomRegisterReq.getPrice());
         roomRepository.saveRoom(room);
     }
 

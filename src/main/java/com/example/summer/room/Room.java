@@ -12,6 +12,12 @@ public class Room {
     private int price;
 
     Room(){}
+
+    public Room(String type, int price) {
+        this.type = type;
+        this.price = price;
+    }
+
     Room(String type, int price, int accommodationId, int roodId) {
         this.type = type;
         this.price = price;
