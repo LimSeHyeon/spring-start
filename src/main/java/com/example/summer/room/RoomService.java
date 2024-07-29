@@ -17,8 +17,7 @@ public class RoomService {
 
     @Transactional
     public void saveRoom(RoomRegisterReq roomRegisterReq) {
-        Room room = new Room(roomRegisterReq.getType(), roomRegisterReq.getPrice());
-        roomRepository.saveRoom(room);
+        roomRepository.saveRoom(roomRegisterReq.toEntity());
     }
 
     @Transactional
