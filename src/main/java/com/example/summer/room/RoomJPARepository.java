@@ -1,6 +1,33 @@
 package com.example.summer.room;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import jakarta.persistence.EntityManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public interface RoomJPARepository extends JpaRepository<Room, Integer> {
+import java.util.HashMap;
+
+@Component
+public class RoomJPARepository {
+
+
+    HashMap<Integer, Room> roomTable = new HashMap<>();
+    int idx = 0;
+
+    EntityManager entityManager;
+
+    @Autowired
+    RoomJPARepository(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public void saveRoom(Room room) {
+        entityManager.persist(room);
+    }
+
+
+    public Room findRoom(int id) {
+        return entityManager.find(Room.class, id);
+    }
+
+
 }
