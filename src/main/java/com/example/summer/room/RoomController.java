@@ -12,14 +12,14 @@ public class RoomController {
         this.roomService = roomService;
     }
 
-    @RequestMapping(value="/rooms/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Room> getRoom(@PathVariable(value="id") int id) {
-        Room foundRoom = roomService.getRoom(id);
-        return new ResponseEntity<>(foundRoom, HttpStatus.OK);
-    }
-
-    @PostMapping("/rooms")
-    public void saveRoom(@RequestBody RoomRegisterReq roomRegisterReq) {
-        roomService.saveRoom(roomRegisterReq);
-    }
+//    @RequestMapping(value="/rooms/{id}", method = RequestMethod.GET)
+//    public ResponseEntity<Room> getRoom(@PathVariable(value="id") int id) {
+//        Room foundRoom = roomService.getRoom(id);
+//        return new ResponseEntity<>(foundRoom, HttpStatus.OK);
+//    }
+//
+//    @PostMapping("/rooms")
+//    public void saveRoom(@RequestBody RoomRegisterReq roomRegisterReq) {
+//        roomService.saveRoom(roomRegisterReq);
+//    }
 }
