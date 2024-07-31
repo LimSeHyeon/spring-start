@@ -1,20 +1,20 @@
 package com.example.summer.generic;
 
-public class Box {
+public class Box<T> {
 
-    String str;
+    T object;
 
-    public void put(String str) {
-        this.str = str;
+    public void put(T object) {
+        this.object = object;
     }
 }
 
 class BoxDemo {
     public static void main(String[] args) {
-        Box strBox = new Box();
+        Box<String> strBox = new Box<>();
         strBox.put("하하하");
 
-        Box intBox = new Box();
+        Box<Integer> intBox = new Box<>();
         intBox.put(1);
     }
 }
