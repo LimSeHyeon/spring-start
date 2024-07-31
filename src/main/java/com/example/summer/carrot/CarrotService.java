@@ -1,8 +1,14 @@
 package com.example.summer.carrot;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 public class CarrotService {
+    /*
+    Q. @Primary 가 아닌 DiscountNotMemberPolicy를 쓰고싶다면?
+    A1. DiscountMemberPolicy 로 해도 됨 !
+    A2. @Qualifier("discountMemberPolicy")
+     */
 
     DiscountPolicy discountPolicy;
 
@@ -26,7 +32,7 @@ class CarrotMemberService extends CarrotService {
 @Component
 class CarrotNotMemberService extends CarrotService {
 
-    public CarrotNotMemberService(DiscountPolicy discountPolicy) {
+    public CarrotNotMemberService(@Qualifier("DiscountNotMemberPolicy") DiscountPolicy discountPolicy) {
         super(discountPolicy);
     }
 }

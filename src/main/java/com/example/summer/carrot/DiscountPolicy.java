@@ -1,5 +1,6 @@
 package com.example.summer.carrot;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +21,7 @@ class DiscountMemberPolicy implements DiscountPolicy {
     }
 }
 
+@Qualifier("DiscountNotMemberPolicy")
 @Component
 class DiscountNotMemberPolicy implements DiscountPolicy {
 
