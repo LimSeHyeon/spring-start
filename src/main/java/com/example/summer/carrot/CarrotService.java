@@ -6,6 +6,10 @@ public class CarrotService {
 
     DiscountPolicy discountPolicy;
 
+    public CarrotService(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
+
     public int calcDiscountedPrice() {
         return discountPolicy.getPolicy();
     }
@@ -14,15 +18,15 @@ public class CarrotService {
 @Component
 class CarrotMemberService extends CarrotService {
 
-    CarrotMemberService(DiscountMemberPolicy discountMemberPolicy) {
-        this.discountPolicy = discountMemberPolicy;
+    CarrotMemberService(DiscountPolicy discountPolicy) {
+        super(discountPolicy);
     }
 }
 
 @Component
 class CarrotNotMemberService extends CarrotService {
 
-    public CarrotNotMemberService(DiscountNotMemberPolicy discountNotMemberPolicy) {
-        this.discountPolicy = discountNotMemberPolicy;
+    public CarrotNotMemberService(DiscountPolicy discountPolicy) {
+        super(discountPolicy);
     }
 }
