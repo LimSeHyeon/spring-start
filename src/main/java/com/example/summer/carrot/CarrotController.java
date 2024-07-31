@@ -9,8 +9,8 @@ public class CarrotController {
 
     private final int MEMBER = 1;
 
-    private CarrotMemberService carrotMemberService;
-    private CarrotNotMemberService carrotNotMemberService;
+    private final CarrotMemberService carrotMemberService;
+    private final CarrotNotMemberService carrotNotMemberService;
 
     CarrotController(CarrotMemberService carrotMemberService, CarrotNotMemberService carrotNotMemberService) {
         this.carrotMemberService = carrotMemberService;
