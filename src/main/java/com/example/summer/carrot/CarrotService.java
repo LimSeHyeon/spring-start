@@ -2,7 +2,7 @@ package com.example.summer.carrot;
 
 import org.springframework.stereotype.Component;
 
-public interface CarrotService {
+public class CarrotService {
 
     DiscountPolicy discountPolicy;
 
@@ -12,7 +12,7 @@ public interface CarrotService {
 }
 
 @Component
-class CarrotMemberService implements CarrotService {
+class CarrotMemberService extends CarrotService {
 
     CarrotMemberService(DiscountMemberPolicy discountMemberPolicy) {
         this.discountPolicy = discountMemberPolicy;
@@ -20,7 +20,7 @@ class CarrotMemberService implements CarrotService {
 }
 
 @Component
-class CarrotNotMemberService implements CarrotService {
+class CarrotNotMemberService extends CarrotService {
 
     public CarrotNotMemberService(DiscountNotMemberPolicy discountNotMemberPolicy) {
         this.discountPolicy = discountNotMemberPolicy;
