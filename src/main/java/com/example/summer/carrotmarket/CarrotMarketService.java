@@ -3,7 +3,7 @@ package com.example.summer.carrotmarket;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CarrotService {
+public class CarrotMarketService {
     public double getCost(CarrotCostReq carrotCostReq) {
         int price = carrotCostReq.getPrice();
         if(!carrotCostReq.getIsUser()) {

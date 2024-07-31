@@ -6,19 +6,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class CarrotController {
+public class CarrotMarketController {
 
-    CarrotService carrotService;
+    CarrotMarketService carrotMarketService;
 
     @Autowired
-    CarrotController(CarrotService carrotService) {
-        this.carrotService = carrotService;
+    CarrotMarketController(CarrotMarketService carrotMarketService) {
+        this.carrotMarketService = carrotMarketService;
     }
 
     @RequestMapping(value = "/cost", method = RequestMethod.POST)
     public ResponseEntity<Integer> getCost(@RequestBody CarrotCostReq carrotCostReq) {
         System.out.println(carrotCostReq.getIsUser());
-        double doubleCost = carrotService.getCost(carrotCostReq);
+        double doubleCost = carrotMarketService.getCost(carrotCostReq);
         return new ResponseEntity<>((int)doubleCost, HttpStatus.OK);
     }
 
