@@ -1,4 +1,4 @@
-package com.example.olympic;
+package com.example.summer.olympic;
 
 
 import org.springframework.boot.SpringApplication;
