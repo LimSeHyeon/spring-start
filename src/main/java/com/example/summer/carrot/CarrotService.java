@@ -3,33 +3,26 @@ package com.example.summer.carrot;
 import org.springframework.stereotype.Component;
 
 public interface CarrotService {
-    int calcDiscountedPrice();
+
+    DiscountPolicy discountPolicy;
+
+    public int calcDiscountedPrice() {
+        return discountPolicy.getPolicy();
+    }
 }
 
 @Component
-class CarrotMemberService {
-
-    DiscountMemberPolicy discountMemberPolicy;
+class CarrotMemberService implements CarrotService {
 
     CarrotMemberService(DiscountMemberPolicy discountMemberPolicy) {
-        this.discountMemberPolicy = discountMemberPolicy;
-    }
-
-    public int calcDiscountedPrice() {
-        return discountMemberPolicy.getPolicy();
+        this.discountPolicy = discountMemberPolicy;
     }
 }
 
 @Component
-class CarrotNotMemberService {
-
-    DiscountNotMemberPolicy discountNotMemberPolicy;
+class CarrotNotMemberService implements CarrotService {
 
     public CarrotNotMemberService(DiscountNotMemberPolicy discountNotMemberPolicy) {
-        this.discountNotMemberPolicy = discountNotMemberPolicy;
-    }
-
-    public int calcDiscountedPrice() {
-        return discountNotMemberPolicy.getPolicy();
+        this.discountPolicy = discountNotMemberPolicy;
     }
 }

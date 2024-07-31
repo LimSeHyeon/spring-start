@@ -12,14 +12,14 @@ public interface DiscountPolicy {
 }
 
 @Component
-class DiscountMemberPolicy {
+class DiscountMemberPolicy implements DiscountPolicy {
     public int getPolicy() {
         return 1;
     }
 }
 
 @Component
-class DiscountNotMemberPolicy {
+class DiscountNotMemberPolicy implements DiscountPolicy {
 
     public int getPolicy() {
         return 0;
