@@ -1,5 +1,6 @@
 package com.example.summer.carrot;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /*
@@ -11,6 +12,7 @@ public interface DiscountPolicy {
     int getPolicy();
 }
 
+@Primary
 @Component
 class DiscountMemberPolicy implements DiscountPolicy {
     public int getPolicy() {
