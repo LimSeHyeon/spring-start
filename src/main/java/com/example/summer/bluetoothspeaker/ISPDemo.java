@@ -1,29 +1,22 @@
 package com.example.summer.bluetoothspeaker;
 
-interface MainInterface {
+interface AInterface {
     void methodA();
+}
+
+interface BInterface {
     void methodB();
 }
 
-class ImplA implements MainInterface{
+class ImplA implements AInterface {
 
     @Override
     public void methodA() {
         System.out.println("implA");
     }
-
-    @Override
-    public void methodB() {
-        // 안 쓰고 싶은디..?
-    }
 }
 
-class ImplB implements MainInterface {
-
-    @Override
-    public void methodA() {
-        // 안 쓰고 싶은디..?
-    }
+class ImplB implements BInterface {
 
     @Override
     public void methodB() {
@@ -31,13 +24,17 @@ class ImplB implements MainInterface {
     }
 }
 
-class IspDemo {
+public class IspDemo {
     public static void main(String[] args) {
         ispMethod(new ImplA());
         ispMethod(new ImplB());
     }
 
-    public static void ispMethod(MainInterface mainInterface) {
+    public static void ispMethod(ImplA implA) {
+        implA.methodA();
+    }
 
+    public static void ispMethod(ImplB implB) {
+        implB.methodB();
     }
 }
