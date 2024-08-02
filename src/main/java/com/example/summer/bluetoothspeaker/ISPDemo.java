@@ -30,11 +30,17 @@ class ImplB implements BInterface {
 
 public class ISPDemo {
     public static void main(String[] args) {
-        ispMethod(new ImplA());
-        ispMethod(new ImplB());
-    }
 
-    public static void ispMethod(ABInterface abInterface) {
+        GenericIsp<AInterface> genericIspA = new GenericIsp<>();
+        genericIspA.ispMethod(new ImplA());
+
+        GenericIsp<BInterface> genericIspB = new GenericIsp<>();
+        genericIspB.ispMethod(new ImplB());
+    }
+}
+
+    class GenericIsp<T> {
+    public void ispMethod(T abInterface) {
         if(abInterface instanceof AInterface) ((AInterface)abInterface).methodA();
         else if (abInterface instanceof BInterface) ((BInterface)abInterface).methodB();
     }
