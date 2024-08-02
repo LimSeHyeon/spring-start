@@ -18,6 +18,10 @@ class GenericClass<C> {
     public <M> M methodD(M m) {
         return m;
     }
+
+    public <G> C multiMethod(G g, C c) {
+        return c;
+    }
 }
 
 class classWithGenericMethod<T> {
