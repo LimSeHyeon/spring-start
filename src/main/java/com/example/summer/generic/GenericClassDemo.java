@@ -12,6 +12,9 @@ public class GenericClassDemo {
         boxGeneric.t = new Object();
         System.out.println(boxGeneric.t.toString());
 
+//        String str1 = (String) boxObject.o;
+//        String str2 = (String) boxGeneric.t;
+
         BoxObject boxComponent = new BoxObject();
         boxComponent.o = new Component();
         Component component = (Component) boxComponent.o;
@@ -20,6 +23,10 @@ public class GenericClassDemo {
         BoxGeneric<Component> boxGenericComponent = new BoxGeneric<>();
         boxGenericComponent.t = new Component();
         System.out.println(boxGenericComponent.t.field);
+
+
+//        String str1 = (String) boxComponent.o; //런타임 시점 예외 잡힘
+//        String str2 = (String) boxGenericComponent.t; // 컴파일 시점 예외 잡힘
     }
 }
 
