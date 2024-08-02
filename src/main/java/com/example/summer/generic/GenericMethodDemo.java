@@ -3,7 +3,7 @@ package com.example.summer.generic;
 public class GenericMethodDemo {
     public static void main(String[] args) {
         ClassWithGenericMethod<Integer> classWithGenericMethod = new ClassWithGenericMethod<>();
-        classWithGenericMethod.genericMethod(7,8);
+        classWithGenericMethod.<Integer>genericMethod(7,8);
     }
 }
 
