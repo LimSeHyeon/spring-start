@@ -1,6 +1,6 @@
 package com.example.summer.bluetoothspeaker;
 
-public class Mashal implements BluetoothSpeaker {
+public class Mashal implements BluetoothSpeaker, AISpeaker, Speaker {
 
     @Override
     public void connectBluetooth() {
