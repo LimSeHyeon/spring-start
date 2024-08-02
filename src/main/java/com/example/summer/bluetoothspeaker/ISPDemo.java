@@ -1,10 +1,14 @@
 package com.example.summer.bluetoothspeaker;
 
-interface AInterface {
+interface ABInterface {
+
+}
+
+interface AInterface extends ABInterface {
     void methodA();
 }
 
-interface BInterface {
+interface BInterface extends ABInterface {
     void methodB();
 }
 
@@ -24,17 +28,14 @@ class ImplB implements BInterface {
     }
 }
 
-public class IspDemo {
+public class ISPDemo {
     public static void main(String[] args) {
         ispMethod(new ImplA());
         ispMethod(new ImplB());
     }
 
-    public static void ispMethod(ImplA implA) {
-        implA.methodA();
-    }
-
-    public static void ispMethod(ImplB implB) {
-        implB.methodB();
+    public static void ispMethod(ABInterface abInterface) {
+        if(abInterface instanceof AInterface) ((AInterface)abInterface).methodA();
+        else if (abInterface instanceof BInterface) ((BInterface)abInterface).methodB();
     }
 }
