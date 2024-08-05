@@ -10,6 +10,8 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 
 @RestController
 public class UserController {
@@ -22,10 +24,11 @@ public class UserController {
     }
 
     @PostMapping(value="/users/signup")
-    public UserJoinReq join(@Valid @RequestBody UserJoinReq userJoinReq, Errors errors) {
-        userService.handleErrors(errors);
+    public Map<String, String> join(@Valid @RequestBody UserJoinReq userJoinReq, Errors errors) {
+        Map<String, String> errorMessages = userService.handleErrors(errors);
 
-        return userJoinReq;
+        // Map -> new ApiError(errorMessages)
+        return errorMessages;
     }
 
     @RequestMapping(value = "/users/login", method = RequestMethod.POST)
