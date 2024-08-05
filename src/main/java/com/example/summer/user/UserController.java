@@ -1,14 +1,15 @@
 package com.example.summer.user;
 
 import com.example.summer.accommodation.Accommodation;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.Errors;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 public class UserController {
@@ -20,10 +21,9 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping(value="/users/signup", method = RequestMethod.POST)
-    public ResponseEntity<User> addUser(@RequestBody User user) {
-        User newUser = userService.addUser(user);
-        return new ResponseEntity<>(newUser, HttpStatus.CREATED);
+    @PostMapping(value="/users/signup")
+    public UserJoinReq join(@Valid @RequestBody UserJoinReq userJoinReq, Errors errors) {
+        return userJoinReq;
     }
 
     @RequestMapping(value = "/users/login", method = RequestMethod.POST)
