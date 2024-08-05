@@ -24,11 +24,19 @@ public class UserController {
     }
 
     @PostMapping(value="/users/signup")
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, String> join(@Valid @RequestBody UserJoinReq userJoinReq, Errors errors) {
         Map<String, String> errorMessages = userService.handleErrors(errors);
 
         // Map -> new ApiError(errorMessages)
         return errorMessages;
+    }
+
+    @PostMapping(value="/users/signup2")
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public UserJoinReq join2(@Valid @RequestBody UserJoinReq userJoinReq) {
+
+        return userJoinReq;
     }
 
     @RequestMapping(value = "/users/login", method = RequestMethod.POST)

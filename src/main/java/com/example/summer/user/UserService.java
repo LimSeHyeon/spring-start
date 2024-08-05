@@ -1,8 +1,10 @@
 package com.example.summer.user;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.HashMap;
 import java.util.Map;
