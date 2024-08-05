@@ -1,6 +1,11 @@
 package com.example.summer.user;
 
 import org.springframework.stereotype.Component;
+import org.springframework.validation.Errors;
+import org.springframework.validation.FieldError;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 public class UserService {
@@ -9,6 +14,18 @@ public class UserService {
 
     UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    public Map<String, String> handleErrors(Errors errors) {
+        Map<String, String> errorMessages = new HashMap<>();
+
+        for(FieldError fieldError : errors.getFieldErrors()) {
+            String errorField = fieldError.getField();
+            String errorMessage = fieldError.getDefaultMessage();
+
+            errorMessages.put(errorField, errorMessage);
+        }
+        return errorMessages;
     }
 
     public User addUser(User user) {
