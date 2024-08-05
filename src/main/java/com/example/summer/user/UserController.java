@@ -23,6 +23,11 @@ public class UserController {
 
     @PostMapping(value="/users/signup")
     public UserJoinReq join(@Valid @RequestBody UserJoinReq userJoinReq, Errors errors) {
+//        userService.handleErrors(errors);
+        for(FieldError fieldError : errors.getFieldErrors()) {
+            String errorField = fieldError.getField();;
+            System.out.println("errorField : " + errorField);
+        }
         return userJoinReq;
     }
 
