@@ -38,8 +38,12 @@ dependencies {
 	//JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
+	//MySQL
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 	//RabbitMQ
-//	implementation 'com.rabbitmq:amqp-client'
+	implementation 'com.rabbitmq:amqp-client'
 
 }
 
