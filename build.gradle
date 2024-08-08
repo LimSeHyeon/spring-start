@@ -38,6 +38,9 @@ dependencies {
 	//JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
+	//RabbitMQ
+//	implementation 'com.rabbitmq:amqp-client'
+
 }
 
 tasks.named('test') {
