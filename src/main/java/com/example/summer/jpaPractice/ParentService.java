@@ -1,4 +1,4 @@
 package com.example.summer.jpaPractice;
 
-public class FamilyService {
+public class ParentService {
 }
