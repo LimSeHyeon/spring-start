@@ -16,4 +16,7 @@ public class ParentService {
     public void save(Parent parent) { parentRepository.save(parent); }
 
 
+    public Parent findParent(String id) {
+        return parentRepository.findById(id).orElseThrow();
+    }
 }
