@@ -4,12 +4,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
 
+import java.util.ArrayList;
+
 @Getter
 @Entity
 public class Parent {
     @Id
     String id;
     String name;
+    ArrayList<Child> children;
 
     public Parent(String id, String name) {
         this.id = id;
