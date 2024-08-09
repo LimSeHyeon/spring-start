@@ -16,4 +16,8 @@ public class ChildService {
     public void save(Child child) {
         childRepository.save(child);
     }
+
+    public Child findChild(int id) {
+        return childRepository.findById(id).orElseThrow();
+    }
 }

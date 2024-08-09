@@ -1,5 +1,6 @@
 package com.example.summer.jpaPractice;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,12 +23,10 @@ public class ChildController {
         Child child = new Child(1, "child1", parent);
         childService.save(child);
     }
+
+    @GetMapping("/child")
+    public Child findChild() {
+        return childService.findChild(1);
+    }
 }
 
-//@RestController
-//public class FamilyController {
-//    @GetMapping("/hkhk")
-//    public void test() {
-//        System.out.println("hishi");
-//    }
-//}
