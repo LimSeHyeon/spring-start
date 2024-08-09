@@ -11,6 +11,14 @@ public class Child {
     private int id;
     private String name;
     @ManyToOne
-//    @JoinColumn("parent_id")
+    @JoinColumn(name="parent_id")
     private Parent parent;
+
+    public Child(int id, String name, Parent parent) {
+        this.id = id;
+        this.name = name;
+        this.parent = parent;
+    }
+
+    public Child() {}
 }
